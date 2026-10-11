@@ -77,7 +77,7 @@ preserved and HTML-escaped at presentation. Stored content is not HTML-escaped.
 
 Done/error notifications try `sendRichMessage`; unsupported methods, missing credentials,
 timeouts, and request errors fall back to `hermes send`. Short events use Hermes directly.
-The first line starts with `OpenCode ·` and the session title; footer dates use English
+The first line starts with the `▣ OC ·` mark and the session title; footer dates use English
 and Moscow time. Aborted turns remain in the journal without a Telegram notification.
 
 ## Updating

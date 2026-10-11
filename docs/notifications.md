@@ -6,7 +6,7 @@ using actual renderer output; the chat list and message context are fictional.
 ## Completed turn
 
 ```text
-OpenCode · 📝 Fix retry handling
+▣ OC · 📝 Fix retry handling
 Completed · demo-worker · 2 min 14 s · $0.06
 
 🧠 Summary

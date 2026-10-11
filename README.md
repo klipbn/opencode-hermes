@@ -27,10 +27,10 @@ OpenCode → watcher → local state ← Hermes control ← slash commands
 
 | Component | Version | Source |
 |---|---|---|
-| `hermes-watch` | 3.10.0 | [watcher/](watcher/) |
-| `opencode-control` | 1.7.0 | [opencode-control/](opencode-control/) |
+| `hermes-watch` | 3.11.0 | [watcher/](watcher/) |
+| `opencode-control` | 1.8.0 | [opencode-control/](opencode-control/) |
 
-**Repository release: [v1.0.0](https://github.com/klipbn/opencode-hermes/releases/tag/v1.0.0).** The watcher and control plugin have independent versions and release histories.
+**Repository release: [v1.1.0](https://github.com/klipbn/opencode-hermes/releases/tag/v1.1.0).** The watcher and control plugin have independent versions and release histories.
 
 See [CHANGELOG.md](CHANGELOG.md) for repository releases and component changelogs for runtime changes.
 

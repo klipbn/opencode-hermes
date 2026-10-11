@@ -4,6 +4,22 @@ All notable repository-release changes are recorded here. Repository releases fo
 [Semantic Versioning](https://semver.org/) and use `vX.Y.Z` Git tags.
 The watcher and control plugin keep their own independent versions and changelogs.
 
+## [1.1.0] - 2026-10-11
+
+### Included components
+
+- **hermes-watch 3.11.0** — [watcher changelog](watcher/CHANGELOG.md).
+- **opencode-control 1.8.0** — [control changelog](opencode-control/CHANGELOG.md).
+
+### Changed
+
+- Replace the visible `OpenCode ·` prefix with the `▣ OC ·` mark in watcher notifications and control output. The glyph mirrors the opencode logo mark; notification structure, commands, and escaping are unchanged.
+
+### Compatibility
+
+- State formats, hook definitions, command identifiers, and mute settings are unchanged by this repository release.
+- Repository versions identify tested source snapshots; they do not replace component versions or update installed copies automatically.
+
 ## [1.0.0] - 2026-10-11
 
 ### Included components
@@ -27,5 +43,7 @@ The watcher and control plugin keep their own independent versions and changelog
 
 - Component runtime versions, state formats, hook definitions, and command identifiers are unchanged by this repository release.
 - Repository versions identify tested source snapshots; they do not replace component versions or update installed copies automatically.
+
+[1.1.0]: https://github.com/klipbn/opencode-hermes/releases/tag/v1.1.0
 
 [1.0.0]: https://github.com/klipbn/opencode-hermes/releases/tag/v1.0.0

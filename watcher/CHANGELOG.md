@@ -2,6 +2,10 @@
 
 Versions follow [Semantic Versioning](https://semver.org/). The watcher and control plugin are versioned independently.
 
+## 3.11.0
+
+- Replace the visible `OpenCode ·` notification prefix with `▣ OC ·`, using a square-ring glyph modeled on the opencode logo mark and the `OC` abbreviation. Notification structure, escaping, and fallback behavior are unchanged.
+
 ## 3.10.0
 
 - Publish the watcher with English notifications, logs, comments, metadata, and AI summary instructions.
