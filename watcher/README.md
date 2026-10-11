@@ -1,4 +1,4 @@
-# hermes-watch 3.11.0
+# hermes-watch 3.12.0
 
 OpenCode session observations and Telegram notifications through Hermes.
 Requires Node 22.13+. This source package includes an MIT LICENSE and has no runtime npm dependencies.

@@ -1,8 +1,8 @@
-# OpenCode Control 1.8.0
+# OpenCode Control 1.9.0
 
 A Hermes command plugin for sessions recorded by hermes-watch. Reads local state,
 does not call an LLM, and exposes live windows, turn results, statistics, and mute controls.
-Recommended watcher: hermes-watch 3.11.0. Earlier 3.4+ state remains readable; features
+Recommended watcher: hermes-watch 3.12.0. Earlier 3.4+ state remains readable; features
 requiring the 3.6+ turn journal explicitly warn when it is unavailable.
 
 ## Install

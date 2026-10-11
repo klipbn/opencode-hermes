@@ -263,33 +263,33 @@ test("delivery failure is logged without duplicating the turn", async t => {
     assert.ok(!f.logs.some(line => line.includes("notification accepted")))
 })
 
-test("fallback done has an OC mark prefix and escaped title", async t => {
+test("fallback done has an OpenCode prefix and escaped title", async t => {
     const f = await fixture(t)
     await f.status("busy")
     await f.status("idle")
-    assert.match(f.messages[0], /^▣ OC · 📝 Race &lt;check&gt;\n/)
+    assert.match(f.messages[0], /^OpenCode · 📝 Race &lt;check&gt;\n/)
 })
 
-test("rich done starts with the OC mark", async t => {
+test("rich done starts with OpenCode", async t => {
     const f = await fixture(t, { rich: true })
     await f.status("busy")
     await f.status("idle")
-    assert.match(f.messages[0], /^<h3>▣ OC · 📝 Race &lt;check&gt;<\/h3>/)
+    assert.match(f.messages[0], /^<h3>OpenCode · 📝 Race &lt;check&gt;<\/h3>/)
 })
 
-test("permission, retry, and error start with the OC mark", async t => {
+test("permission, retry, and error start with OpenCode", async t => {
     const f = await fixture(t)
     await f.status("busy")
     await f.emit("permission.asked", { permission: "bash" })
     await f.emit("session.status", { status: { type: "retry", attempt: 1 } })
     await f.error()
     assert.equal(f.messages.length, 3)
-    for (const message of f.messages) assert.match(message, /^▣ OC · 📝 /)
+    for (const message of f.messages) assert.match(message, /^OpenCode · 📝 /)
     assert.match(f.messages[0], /Waiting for approval/)
     assert.match(f.messages[0], /Return to OpenCode and approve or deny the action/)
     assert.match(f.messages[1], /Retry #1/)
     assert.match(f.messages[2], /❌ Error/)
-    assert.match(f.messages[2], /^▣ OC · 📝 Race &lt;check&gt;\n/)
+    assert.match(f.messages[2], /^OpenCode · 📝 Race &lt;check&gt;\n/)
 })
 
 

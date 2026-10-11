@@ -1,5 +1,9 @@
 # opencode-control changelog
 
+## 1.9.0
+
+- Restore the `OpenCode ·` header prefix in `/oc`, `/ocstats`, `/today`, `/ocproj`, problems, and models output. Commands, parsing, and state handling are unchanged.
+
 ## 1.8.0
 
 - Replace the visible `OpenCode ·` header prefix in `/oc`, `/ocstats`, `/today`, `/ocproj`, problems, and models output with `▣ OC ·`, a square-ring glyph modeled on the opencode logo mark plus the `OC` abbreviation. Commands, parsing, and state handling are unchanged.

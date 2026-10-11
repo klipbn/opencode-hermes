@@ -1,5 +1,5 @@
 /**
- * hermes-watch v3.11.0
+ * hermes-watch v3.12.0
  *
  * OpenCode watcher: writes session state to disk and sends Telegram notifications.
  * Completed/error turns use Telegram Bot API sendRichMessage with collapsible
@@ -195,7 +195,7 @@ export const shouldWriteInstanceHeartbeat = (
   liveStatusCount: number,
 ): boolean => !headless || Boolean(currentSessionID) || liveStatusCount > 0
 
-const WATCHER_VERSION = "3.11.0"
+const WATCHER_VERSION = "3.12.0"
 
 const HOME = process.env.HOME ?? "/tmp"
 
@@ -1182,7 +1182,7 @@ async function sendTelegramRich(
 
 /* Every notification starts with the session title shown in the Telegram chat preview; status follows on the second line. Fall back to the project name, then Session. */
 function notifyTitle(title: string | undefined, project: string) {
-  return `▣ OC · 📝 ${title?.trim() || project || "Session"}`
+  return `OpenCode · 📝 ${title?.trim() || project || "Session"}`
 }
 
 

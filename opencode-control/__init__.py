@@ -1,5 +1,5 @@
 """
- Hermes plugin: OpenCode Control Center v1.8.0 (live windows, macOS/Linux).
+ Hermes plugin: OpenCode Control Center v1.9.0 (live windows, macOS/Linux).
 
 Slash commands:
   /oc [N|session_id|all]  - live OpenCode windows or session details
@@ -46,7 +46,7 @@ from pathlib import Path
 from typing import Any
 
 
-PLUGIN_VERSION = "1.8.0"
+PLUGIN_VERSION = "1.9.0"
 
 HOME = Path.home()
 HERMES_HOME = Path(os.environ.get("HERMES_HOME", HOME / ".hermes"))
@@ -988,13 +988,13 @@ def render_live_windows(
 ) -> str:
     if not windows:
         return (
-            "▣ OC · now\n\n"
+            "OpenCode · now\n\n"
             "No live OpenCode windows.\n"
             "History: /oc all · closed: /occlosed"
         )
 
     lines = [
-        f"▣ OC · now · windows: {len(windows)}",
+        f"OpenCode · now · windows: {len(windows)}",
         "",
     ]
 
@@ -1060,17 +1060,17 @@ def render_oc_list(
             )
 
         return (
-            "▣ OC · now\n\n"
+            "OpenCode · now\n\n"
             "No active or recently completed sessions.\n"
             "Closed: /occlosed"
         )
 
     lines = [
         (
-            f"▣ OC · last {MAX_AGE_HOURS} "
+            f"OpenCode · last {MAX_AGE_HOURS} "
             f"{plural_ru(MAX_AGE_HOURS, 'hour', 'hours', 'hours')}"
             if include_closed
-            else "▣ OC · now"
+            else "OpenCode · now"
         ),
         "",
     ]
@@ -1127,7 +1127,7 @@ def render_session(
     label = LABELS.get(status, status.upper())
 
     lines = [
-        f"{icon} ▣ OC · {label}",
+        f"{icon} OpenCode · {label}",
         "",
         f"📝 {row.get('title') or 'Untitled'}",
         f"📁 {row.get('project', '?')}",
@@ -1333,7 +1333,7 @@ def render_today(
     closed = counts.get("closed", 0)
 
     lines = [
-        f"📊 ▣ OC · {today.strftime('%d/%m/%Y')}",
+        f"📊 OpenCode · {today.strftime('%d/%m/%Y')}",
         "",
         f"Sessions: {len(today_rows)}",
         # idle and closed both represent completed sessions;
@@ -1468,7 +1468,7 @@ def render_errors(
             "OpenCode states found in the last 24 hours."
         )
 
-    lines = ["🔴 ▣ OC · recent problems", ""]
+    lines = ["🔴 OpenCode · recent problems", ""]
 
     for row in problems[:10]:
         status = row["_status"]
@@ -2040,7 +2040,7 @@ def handle_oc(raw_args: str) -> str:
 
             return "\n".join(
                 [
-                    "🟢 ▣ OC · OPEN",
+                    "🟢 OpenCode · OPEN",
                     "",
                     f"📁 {row.get('project', '?')}",
                     f"📂 {compact_path(row.get('directory'))}",
@@ -2226,7 +2226,7 @@ def handle_models(raw_args: str) -> str:
     )
 
     return (
-        f"🤖 ▣ OC · models · {period}\n\n"
+        f"🤖 OpenCode · models · {period}\n\n"
         f"{clean}\n\n"
         "Period: /models N"
     )
@@ -2898,7 +2898,7 @@ def handle_ocstats(raw_args: str) -> str:
     avg_seconds = seconds / total if total else 0
 
     lines = [
-        f"📊 ▣ OC · last {days} "
+        f"📊 OpenCode · last {days} "
         f"{plural_ru(days, 'day', 'days', 'days')}",
         "",
         f"Turns: {total} · sessions: {len(sessions)} "
