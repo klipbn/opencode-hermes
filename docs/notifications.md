@@ -1,7 +1,7 @@
 # Notification examples
 
-These examples use fictional data. The README preview is generated from the actual renderer
-with a substitute transport; it is an illustrative document, not a screenshot of a real chat.
+These examples use fictional data. The README preview is a simulated dark-theme Telegram Desktop screenshot
+using actual renderer output; the chat list and message context are fictional.
 
 ## Completed turn
 

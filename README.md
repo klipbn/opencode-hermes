@@ -1,5 +1,6 @@
 # OpenCode Hermes
 
+[![Release](https://img.shields.io/github/v/release/klipbn/opencode-hermes)](https://github.com/klipbn/opencode-hermes/releases/latest)
 [![CI](https://github.com/klipbn/opencode-hermes/actions/workflows/ci.yml/badge.svg)](https://github.com/klipbn/opencode-hermes/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-22.13%2B-339933)](https://nodejs.org/)
 [![Python](https://img.shields.io/badge/python-3.9%2B-3776AB)](https://www.python.org/)
@@ -12,7 +13,7 @@ Per-turn summaries, session diffs, test results, usage, and live OpenCode window
 
 ![Example OpenCode notification](docs/notification-preview.png)
 
-*Illustrative preview generated from the actual notification renderer using fictional data; Telegram clients may display rich sections differently.*
+*Simulated dark-theme Telegram Desktop screenshot with fictional chats and actual notification renderer output. Client presentation may vary.*
 
 ## What it does
 
@@ -29,7 +30,17 @@ OpenCode → watcher → local state ← Hermes control ← slash commands
 | `hermes-watch` | 3.10.0 | [watcher/](watcher/) |
 | `opencode-control` | 1.7.0 | [opencode-control/](opencode-control/) |
 
-The watcher and control plugin have independent versions and release histories.
+**Repository release: [v1.0.0](https://github.com/klipbn/opencode-hermes/releases/tag/v1.0.0).** The watcher and control plugin have independent versions and release histories.
+
+See [CHANGELOG.md](CHANGELOG.md) for repository releases and component changelogs for runtime changes.
+
+## Releases
+
+Download the tested watcher and control source ZIPs from
+[GitHub Releases](https://github.com/klipbn/opencode-hermes/releases/latest).
+Every release includes `SHA256SUMS`; verify downloaded archives with `shasum -a 256 -c SHA256SUMS`
+or `sha256sum -c SHA256SUMS`. Each component archive includes its source, version metadata,
+changelog, README, and MIT LICENSE. GitHub also provides the tagged repository source archive.
 
 ## Quick start
 

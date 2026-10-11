@@ -1,3 +1,112 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenCode Hermes notification preview</title>
-<style>*{box-sizing:border-box}body{margin:0;background:#eef3f8;color:#173047;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif}.canvas{width:1160px;padding:65px 56px 42px;min-height:720px;display:grid;grid-template-columns:1fr 560px;gap:48px;align-items:center}.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#54708a;font-weight:700}.title{font-size:48px;line-height:1.13;letter-spacing:-2px;margin:20px 0 18px}.intro{font-size:19px;line-height:1.6;color:#53697b;max-width:380px}.features{font-size:15px;line-height:2.15;padding:0;list-style:none;margin:25px 0}.features li:before{content:'✓';color:#2088be;margin-right:12px;font-weight:700}.version{display:inline-block;background:#dfe9f1;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:600;color:#4c6377}.chat{background:white;border:1px solid #d7e3ed;border-radius:18px;box-shadow:0 18px 50px #153b5e13;overflow:hidden}.bar{display:flex;gap:13px;align-items:center;background:#2786b9;padding:18px 23px;color:white}.avatar{width:38px;height:38px;display:grid;place-items:center;background:#ffffff27;border-radius:50%;font-weight:800}.bar strong{display:block;font-size:15px}.bar small{font-size:12px;opacity:.82}.message{padding:22px 24px 20px;font-size:14px;line-height:1.6}h3{font-size:17px;margin:0 0 9px;color:#17344e}p{margin:8px 0 14px}details{border-top:1px solid #e6edf3;padding:11px 0}summary{font-weight:650;cursor:pointer;list-style:none;display:flex;justify-content:space-between}summary:after{content:'⌄';color:#7593a8}[open]>summary:after{content:'⌃'}details p{color:#456077;margin:10px 0 1px;padding-left:5px}footer{font-size:11px;color:#7890a3;margin-top:13px}.note{grid-column:1/-1;text-align:center;font-size:11px;color:#708599;margin-top:20px}.tag{font-size:11px;opacity:.7;margin-left:auto}.title span{color:#2686b9}</style>
-<main class="canvas"><section><div class="eyebrow">Agent observations → Telegram</div><h1 class="title">OpenCode<br><span>Hermes</span></h1><p class="intro">A useful turn update, with the context you need to decide what happens next.</p><ul class="features"><li>Per-turn observations</li><li>SDK diffs and recognized tests</li><li>Independent Hermes commands</li></ul><div class="version">Watcher / control · 3.10.0 / 1.7.0</div></section><section class="chat"><div class="bar"><div class="avatar">H</div><div><strong>Hermes</strong><small>Notification preview</small></div><div class="tag">SYNTHETIC DATA</div></div><article class="message"><h3>OpenCode · 📝 Fix retry handling</h3><p>✅ Completed · demo-worker · 2 min 14 s · $0.06</p><p>demo-model · 🛠 read(6) bash(3)</p><details open><summary>🧠 Summary</summary><p>• Done: Fixed retry handling.<br/>• Changes: 2 files, +18 / -5.<br/>• Checks: npm test passed.</p></details><details><summary>📦 Diff · 2 files · +18 / -5</summary><p>M src/worker.ts (+14/-4)<br/>M tests/worker.test.mjs (+4/-1)</p></details><details><summary>🧪 Tests · ✅ 1 · ❌ 0</summary><p>✅ npm test · 0 s</p></details><details><summary>📊 Details</summary><p>⏱ 2 min 14 s<br/>💰 $0.06 · 9.3k in / 1.4k out<br/>🧠 summary: default/default<br/>📦 scope: current turn</p></details><footer>Sunday, 11 October 2026 · 15:34 MSK</footer></article></section><div class="note">Illustrative preview of actual renderer output. Fictional session, project, model, and observations; client presentation may vary.</div></main></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenCode notification — simulated dark-theme Telegram Desktop screenshot</title>
+    <style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #171b20; background: #fff; }
+.telegram { width: 1120px; height: 790px; overflow: hidden; background: #fff; border: 1px solid #d9dce1; }
+.titlebar { height: 29px; background: #f2f3f5; border-bottom: 1px solid #e7e8ea; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #777c83; position: relative; }
+.lights { position: absolute; left: 13px; display: flex; gap: 8px; }
+.lights i { width: 11px; height: 11px; border-radius: 50%; background: #ff6158; border: 1px solid #e44943; }
+.lights i:nth-child(2) { background: #ffbf30; border-color: #dda628; }
+.lights i:nth-child(3) { background: #2bc840; border-color: #22ab35; }
+.workspace { display: grid; grid-template-columns: 285px 1fr; height: 760px; }
+.sidebar { border-right: 1px solid #d9dfe4; background: #fff; }
+.searchbar { height: 66px; display: flex; align-items: center; gap: 19px; padding: 0 17px; color: #87939e; }
+svg { width: 23px; height: 23px; flex: none; }
+.search { height: 37px; border-radius: 19px; background: #f1f3f5; color: #949ea7; display: flex; align-items: center; gap: 8px; padding: 0 13px; flex: 1; font-size: 14px; }
+.search svg { width: 17px; height: 17px; }
+.row { height: 78px; padding: 13px 14px; display: flex; align-items: center; gap: 12px; }
+.row.selected { background: #419fd9; color: white; }
+.avatar { width: 51px; height: 51px; border-radius: 50%; display: grid; place-items: center; flex: none; color: white; background: linear-gradient(145deg,#59c3ee,#238fc9); font-size: 21px; }
+.avatar svg { width: 30px; height: 30px; }
+.selected .avatar { background: #c0eaff; color: #298ec2; }
+.green { background: linear-gradient(140deg,#87c88f,#56a870); }
+.purple { background: linear-gradient(140deg,#b8a0e2,#9372c5); }
+.rowtext { min-width: 0; flex: 1; }
+.rowtop { display: flex; gap: 8px; align-items: baseline; }
+.rowtop strong { font-size: 15px; font-weight: 600; flex: 1; white-space: nowrap; }
+.rowtop time { font-size: 11px; color: #9da7af; }
+.selected .rowtop time { color: #daeffb; }
+.rowpreview { margin-top: 7px; font-size: 13px; color: #8d979f; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.selected .rowpreview { color: #e0f2fd; }
+.chat { display: flex; flex-direction: column; min-width: 0; }
+.chathead { height: 66px; flex: none; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid #dce0e4; gap: 18px; }
+.headname { flex: 1; }
+.headname strong { font-size: 16px; font-weight: 600; }
+.headname small { display: block; margin-top: 4px; color: #949ea7; font-size: 13px; }
+.chathead>svg { color: #8a98a5; }
+.history { flex: 1; min-height: 0; padding: 22px 34px; background-color: #e3e9db; background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22210%22%20height%3D%22190%22%20viewBox%3D%220%200%20210%20190%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23324356%22%20stroke-width%3D%221.1%22%20opacity%3D%22.32%22%3E%3Cpath%20d%3D%22m25%2022%2027%208-14%2012-4-9-9-11zM34%2033l18-3M126%2036c-8-14-28-1-10%2012l10%208%2010-8c18-13-2-26-10-12zM169%20121l5-10%205%2010%2011%202-8%208%202%2011-10-5-10%205%202-11-8-8zM27%20112h31a7%207%200%200%201%207%207v15a7%207%200%200%201-7%207H41l-12%2010v-10h-2a7%207%200%200%201-7-7v-15a7%207%200%200%201%207-7zM29%20122h25M29%20130h16M89%20164l14-14%2014%2014-14%2014zM182%2052l8-8M177%2043l7%207M99%2091l5-7%205%207-5%207z%22/%3E%3C/g%3E%3C/svg%3E"); display: flex; flex-direction: column; align-items: flex-start; gap: 21px; }
+.day { align-self: center; padding: 5px 12px; border-radius: 14px; background: #93a78ac7; color: white; font-size: 12px; font-weight: 500; }
+.bubble { width: 625px; background: white; border-radius: 11px 11px 11px 4px; padding: 15px 17px 8px; box-shadow: 0 1px 2px #53654929; position: relative; }
+.bubble:before { position: absolute; content: ""; bottom: 0; left: -7px; width: 16px; height: 17px; background: white; clip-path: polygon(45% 0,100% 0,100% 100%,0 100%,40% 60%); }
+.message { font-size: 14px; line-height: 1.55; }
+.message h3 { margin: 0 0 8px; font-size: 16px; line-height: 1.45; font-weight: 650; }
+.message>p { margin: 7px 0 10px; }
+.message details { background: #edf6fc; border-left: 3px solid #77b6df; border-radius: 4px; margin: 9px 0; padding: 7px 10px; }
+.message summary { font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; list-style: none; color: #234d69; }
+.message summary:after { content: "⌄"; color: #539bc9; font-size: 18px; line-height: 1; }
+.message details[open]>summary:after { content: "⌃"; }
+.message details p { margin: 7px 0 2px; color: #273944; }
+.message footer { margin-top: 13px; font-size: 11px; color: #8c98a0; }
+.stamp { font-size: 11px; color: #8d9ba6; text-align: right; height: 16px; margin-top: 3px; }
+.composer { height: 58px; background: white; border-top: 1px solid #e0e5e7; display: flex; align-items: center; gap: 20px; padding: 0 21px; color: #98a5ae; }
+.composer span { flex: 1; font-size: 14px; color: #a3adb5; }
+
+/* Telegram Desktop night-theme mockup; all chats and observations are fictional. */
+:root { color-scheme: dark; }
+body { color: #e7edf3; background: #0e1621; }
+.telegram { background: #17212b; border-color: #273746; }
+.titlebar { background: #17212b; border-bottom-color: #233240; color: #9aaab8; }
+.sidebar { border-right-color: #243342; background: #17212b; }
+.searchbar { color: #8296a8; }
+.search { background: #242f3d; color: #8294a5; }
+.row.selected { background: #2b5278; color: #fff; }
+.avatar { background: linear-gradient(145deg,#55b9e5,#2876a5); }
+.selected .avatar { background: #3b82ab; color: #edf8ff; }
+.green { background: linear-gradient(140deg,#66ab82,#40855c); }
+.purple { background: linear-gradient(140deg,#a58acf,#7653aa); }
+.rowtop time { color: #8294a5; }
+.selected .rowtop time { color: #c8e1f5; }
+.rowpreview { color: #899bab; }
+.selected .rowpreview { color: #d4e9f9; }
+.chathead { background: #17212b; border-bottom-color: #243443; }
+.headname small { color: #899bab; }
+.chathead>svg { color: #8294a5; }
+.history { background-color: #0e1621; }
+.day { background: #293d52; color: #e0edf8; }
+.bubble { background: #182533; box-shadow: 0 1px 3px #0005; }
+.bubble:before { background: #182533; }
+.message details { background: #20364a; border-left-color: #5da6d8; }
+.message summary { color: #a1d4f5; }
+.message summary:after { color: #70b6e4; }
+.message details p { color: #e2ebf3; }
+.message footer { color: #879bad; }
+.stamp { color: #899fb3; }
+.composer { background: #17212b; border-top-color: #253544; color: #8498a9; }
+.composer span { color: #8294a5; }
+</style>
+</head>
+<body>
+    <main class="telegram" aria-label="Simulated Telegram Desktop chat with fictional data">
+        <header class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Telegram</header>
+        <div class="workspace">
+            <aside class="sidebar" aria-label="Fictional chat list">
+                <div class="searchbar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><div class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg>Search</div></div>
+                <div class="row selected"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="13" rx="4"/><path d="M12 3v3M8 11h.01M16 11h.01M8 15h8M1 10v5M23 10v5"/></svg></div><div class="rowtext"><div class="rowtop"><strong>Hermes</strong><time>15:34</time></div><div class="rowpreview">OpenCode · Fix retry handling</div></div></div>
+                <div class="row"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></div><div class="rowtext"><div class="rowtop"><strong>Saved Messages</strong><time>14:12</time></div><div class="rowpreview">Notes and bookmarks</div></div></div>
+                <div class="row"><div class="avatar green">D</div><div class="rowtext"><div class="rowtop"><strong>Developer notes</strong><time>13:45</time></div><div class="rowpreview">Release checklist</div></div></div>
+                <div class="row"><div class="avatar purple">B</div><div class="rowtext"><div class="rowtop"><strong>Build updates</strong><time>12:08</time></div><div class="rowpreview">All checks passed</div></div></div>
+            </aside>
+            <section class="chat" aria-label="Hermes bot conversation">
+                <header class="chathead"><div class="headname"><strong>Hermes</strong><small>bot</small></div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg></header>
+                <div class="history"><div class="day">October 11</div><div class="bubble"><article class="message"><h3>OpenCode · 📝 Fix retry handling</h3><p>✅ Completed · demo-worker · 2 min 14 s · $0.06</p><p>demo-model · 🛠 read(6) bash(3)</p><details open><summary>🧠 Summary</summary><p>• Done: Fixed retry handling.<br/>• Changes: 2 files, +18 / -5.<br/>• Checks: npm test passed.</p></details><details><summary>📦 Diff · 2 files · +18 / -5</summary><p>M src/worker.ts (+14/-4)<br/>M tests/worker.test.mjs (+4/-1)</p></details><details><summary>🧪 Tests · ✅ 1 · ❌ 0</summary><p>✅ npm test · 0 s</p></details><details><summary>📊 Details</summary><p>⏱ 2 min 14 s<br/>💰 $0.06 · 9.3k in / 1.4k out<br/>🧠 summary: default/default<br/>📦 scope: current turn</p></details><footer>Sunday, 11 October 2026 · 15:34 MSK</footer></article><div class="stamp">15:34</div></div></div>
+                <footer class="composer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 14 7-7a3 3 0 0 1 4 4l-9 9a5 5 0 0 1-7-7L13 3a4 4 0 0 1 6 6l-8 8a2 2 0 0 1-3-3l7-7"/></svg><span>Write a message...</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7 14c3 4 7 4 10 0M8 8h.01M16 8h.01"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg></footer>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
