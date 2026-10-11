@@ -1,0 +1,12 @@
+node_modules/
+dist/
+archive/
+docs/history/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.local.json
+*.db
+*.log

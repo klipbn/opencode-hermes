@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - node: "22.13.0"
+            python: "3.9"
+          - node: "24"
+            python: "3.13"
+    name: Node ${{ matrix.node }} / Python ${{ matrix.python }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: watcher/package-lock.json
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install locked development dependencies
+        run: npm ci --prefix watcher --ignore-scripts
+      - name: Check English publication text
+        run: python scripts/check_language.py
+      - name: Typecheck
+        run: npm --prefix watcher run typecheck
+      - name: Test watcher behavior
+        run: npm --prefix watcher test
+      - name: Test control, packaging, and publication checks
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Check Python syntax
+        run: python -m compileall -q scripts opencode-control
+      - name: Build both source releases
+        run: |
+          python scripts/package.py watcher
+          python scripts/package.py control
+      - name: Upload inspected source packages
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: source-packages-node-${{ matrix.node }}-python-${{ matrix.python }}
+          path: dist/*.zip
+          if-no-files-found: error
